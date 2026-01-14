@@ -10,19 +10,14 @@ export const COLORS = {
   ERROR: '#DC2626',
 };
 
-/**
- * Obscene words list to exclude from gameplay.
- */
-const OBSCENE_WORDS = [
+export const OBSCENE_WORDS = [
   'SHIT', 'FUCK', 'BITCH', 'CUNT', 'PISS', 'TWAT', 'ARSE', 'DICKS', 'COCKS',
   'DYKE', 'FAGS', 'FAGGOT', 'WHORE', 'SLUT', 'WANK', 'DAMN', 'HELL', 'ASSES'
 ];
 
-/**
- * A curated collection of common 5-letter words inspired by Wordle solutions.
- */
-// Fix: Defined and populated RAW_WORD_LIST correctly.
-const RAW_WORD_LIST = [
+// Fix: Renamed RAW_WORD_LIST to WORD_LIST and exported it to resolve the import error in utils.ts.
+// Also closed the truncated array and string from the source file.
+export const WORD_LIST = [
   'ABACK', 'ABASE', 'ABATE', 'ABBEY', 'ABBOT', 'ABHOR', 'ABIDE', 'ABLED', 'ABODE', 'ABORT', 
   'ABOUT', 'ABOVE', 'ABUSE', 'ABYSS', 'ACORN', 'ACRID', 'ACTOR', 'ACUTE', 'ADAGE', 'ADAPT', 
   'ADMIT', 'ADOBE', 'ADOPT', 'ADORE', 'ADORN', 'ADULT', 'AFFIX', 'AFIRE', 'AFOOT', 'AFOUL', 
@@ -104,11 +99,60 @@ const RAW_WORD_LIST = [
   'FORGO', 'FORTE', 'FORTH', 'FORTY', 'FORUM', 'FOUND', 'FOYER', 'FRAIL', 'FRAME', 'FRANK', 
   'FRAUD', 'FREAK', 'FREED', 'FREER', 'FRESH', 'FRIAR', 'FRIED', 'FRILL', 'FRISK', 'FRITZ', 
   'FROCK', 'FROND', 'FRONT', 'FROST', 'FROTH', 'FROWN', 'FROZE', 'FRUIT', 'FUDGE', 'FUGUE', 
-  'FULLY', 'FUNGI', 'FUNKY', 'FUNNY', 'FUROR', 'FURRY', 'FUSSY', 'FUZZY'
+  'FULLY', 'FUNGI', 'FUNKY', 'FUNNY', 'FUROR', 'FURRY', 'FUSSY', 'FUZZY', 'GABLE', 'GAILY', 
+  'GAINS', 'GAMUT', 'GANKY', 'GAPE', 'GARB', 'GASES', 'GAUDY', 'GAUGE', 'GAUNT', 'GAUZE', 
+  'GAVEL', 'GAWKY', 'GAYER', 'GAYLY', 'GAZER', 'GEARS', 'GECKO', 'GEESE', 'GENIE', 'GENRE', 
+  'GHOST', 'GHOUL', 'GIANT', 'GIDDY', 'GIPSY', 'GIRTH', 'GIVEN', 'GIVER', 'GLADE', 'GLAND', 
+  'GLARE', 'GLASS', 'GLAZE', 'GLEAM', 'GLEAN', 'GLIDE', 'GLINT', 'GLOAT', 'GLOBE', 'GLOOM', 
+  'GLORY', 'GLOSS', 'GLOVE', 'GLYPH', 'GNASH', 'GNOME', 'GOLLY', 'GONAD', 'GONER', 'GOOSE', 
+  'GOURD', 'GRACE', 'GRADE', 'GRAFT', 'GRAIL', 'GRAIN', 'GRAND', 'GRANT', 'GRAPE', 
+  'GRAPH', 'GRASP', 'GRASS', 'GRATE', 'GRAVE', 'GRAVY', 'GRAZE', 'GREAT', 'GREED', 'GREEK', 
+  'GREEN', 'GREET', 'GRIEF', 'GRILL', 'GRIME', 'GRIMY', 'GRIND', 'GRIP', 'GROAN', 'GROIN', 
+  'GROOM', 'GROPE', 'GROSS', 'GROUP', 'GROUT', 'GROVE', 'GROWL', 'GROWN', 'GRUEL', 'GRUFF', 
+  'GRUNT', 'GUARD', 'GUEST', 'GUIDE', 'GUILD', 'GUILE', 'GUILT', 'GUISE', 'GULCH', 'GULLY', 
+  'GUMBO', 'GUMMY', 'GUPPY', 'GUSTO', 'GUSTY', 'GYPSY', 'HABIT', 'HAIRY', 'HALVE', 'HANDY', 
+  'HAPPY', 'HARDY', 'HAREM', 'HARPY', 'HARRY', 'HARSH', 'HASTE', 'HASTY', 'HATCH', 'HATER', 
+  'HAUNT', 'HAUTE', 'HAVEN', 'HAVOC', 'HAZEL', 'HAZY', 'HEADY', 'HEARD', 'HEART', 'HEATH', 
+  'HEAVE', 'HEAVY', 'HEDGE', 'HEFTY', 'HEIST', 'HELIX', 'HELLO', 'HENCE', 'HERON', 'HILLY', 
+  'HINGE', 'HIPPO', 'HIPPY', 'HIRED', 'HITCH', 'HOARD', 'HOBBY', 'HOIST', 'HOLLY', 'HOMER', 
+  'HONEY', 'HONOR', 'HORDE', 'HORNY', 'HORSE', 'HOTEL', 'HOTLY', 'HOUND', 'HOUSE', 'HOVEL', 
+  'HOVER', 'HOWDY', 'HUMAN', 'HUMID', 'HUMOR', 'HUMPH', 'HUMUS', 'HUNCH', 'HUNKY', 'HURRY', 
+  'HUSKY', 'HUSSY', 'HUTCH', 'HYDRO', 'HYENA', 'HYMEN', 'HYPER', 'ICILY', 'ICONIC', 'IDEAL', 
+  'IDEAS', 'IDIOM', 'IDIOT', 'IDLER', 'IDYLL', 'IGLOO', 'ILIAC', 'IMAGE', 'IMBUE', 'IMPEL', 
+  'IMPLY', 'INANE', 'INBOX', 'INDEX', 'INEPT', 'INERT', 'INFER', 'INGOT', 'INLAY', 'INLET', 
+  'INNER', 'INPUT', 'INTER', 'INTRO', 'IONIC', 'IRATE', 'IRONY', 'ISLET', 'ISSUE', 'ITCHY', 
+  'IVORY', 'JAUNT', 'JAZZY', 'JELLY', 'JERKY', 'JETTY', 'JEWEL', 'JIFFY', 'JOINT', 'JOIST', 
+  'JOKER', 'JOLLY', 'JOUST', 'JUDGE', 'JUICE', 'JUICY', 'JUMBO', 'JUMPY', 'JUNTA', 'JUTTO', 
+  'KABOB', 'KAPPA', 'KARMA', 'KAYAK', 'KEBAB', 'KHAKI', 'KINKY', 'KIOSK', 'KITTY', 'KNACK', 
+  'KNAVE', 'KNEAD', 'KNEED', 'KNEEL', 'KNELT', 'KNIFE', 'KNOCK', 'KNOLL', 'KNOWN', 'KOALA', 
+  'KRAIL', 'LABEL', 'LABOR', 'LADEN', 'LADLE', 'LAGER', 'LANCE', 'LANKY', 'LAPEL', 'LAPSE', 
+  'LARGE', 'LARVA', 'LASSO', 'LATCH', 'LATER', 'LATEX', 'LATHE', 'LATTE', 'LAUGH', 'LAYER', 
+  'LEACH', 'LEAFY', 'LEAKY', 'LEANT', 'LEAP', 'LEARN', 'LEASE', 'LEASH', 'LEAST', 'LEAVE', 
+  'LEDGE', 'LEECH', 'LEERY', 'LEFTY', 'LEGAL', 'LEGGY', 'LEMON', 'LEMUR', 'LEPER', 'LEVEL', 
+  'LEVER', 'LIBEL', 'LIEGE', 'LIGHT', 'LIKEN', 'LILAC', 'LIMBO', 'LIMIT', 'LINEN', 'LINER', 
+  'LINGO', 'LIPID', 'LITHE', 'LIVER', 'LIVID', 'LLAMA', 'LOAMY', 'LOATH', 'LOBBY', 'LOCAL', 
+  'LOCUS', 'LODGE', 'LOFTY', 'LOGIC', 'LOGIN', 'LOOPY', 'LOOSE', 'LORRY', 'LOSER', 'LOUSE', 
+  'LOUSY', 'LOVER', 'LOWER', 'LOWLY', 'LOYAL', 'LUCID', 'LUCKY', 'LUMEN', 'LUMPY', 'LUNAR', 
+  'LUNCH', 'LUNGE', 'LUPUS', 'LURCH', 'LURID', 'LUSTY', 'LYING', 'LYMPH', 'LYRIC', 'MACAW', 
+  'MACHO', 'MACRO', 'MADAM', 'MADLY', 'MAFIA', 'MAGIC', 'MAGMA', 'MAIZE', 'MAJOR', 'MAKER', 
+  'MAMBA', 'MAMMA', 'MAMMY', 'MANGA', 'MANGE', 'MANGY', 'MANIA', 'MANIC', 'MANLY', 'MANNA', 
+  'MANOR', 'MAPLE', 'MARCH', 'MARRY', 'MARSH', 'MASON', 'MASSE', 'MATCH', 'MATEY', 'MAUVE', 
+  'MAXIM', 'MAYBE', 'MAYOR', 'MEALY', 'MEANT', 'MEATY', 'MECCA', 'MEDAL', 'MEDIA', 'MEDIC', 
+  'MELEE', 'MELON', 'MERCY', 'MERGE', 'MERIT', 'MERRY', 'METAL', 'METER', 'METRO', 'MICRO', 
+  'MIDGE', 'MIDST', 'MIGHT', 'MILKY', 'MIMIC', 'MINCE', 'MINER', 'MINIM', 'MINOR', 'MINTY', 
+  'MINUS', 'MIRTH', 'MISER', 'MISSY', 'MIXER', 'MOCKY', 'MODAL', 'MODEL', 'MODEM', 'MOGUL', 
+  'MOIST', 'MOLAR', 'MOLDY', 'MONEY', 'MONTH', 'MOODY', 'MOOSE', 'MORAL', 'MORON', 'MORPH', 
+  'MOSSY', 'MOTEL', 'MOTIF', 'MOTOR', 'MOTTO', 'MOULT', 'MOUND', 'MOUNT', 'MOURN', 'MOUSE', 
+  'MOUTH', 'MOVER', 'MOVIE', 'MOWER', 'MUCKY', 'MUCUS', 'MUDDY', 'MULCH', 'MUMMY', 'MUNCH', 
+  'MURAL', 'MURKY', 'MUSHY', 'MUSIC', 'MUSKY', 'MUSTY', 'MYTHS', 'NADIR', 'NAIVE', 'NANNY', 
+  'NASAL', 'NASTY', 'NATAL', 'NAVAL', 'NAVEL', 'NEEDY', 'NEIGH', 'NERDY', 'NERVE', 'NEVER', 
+  'NEWER', 'NEWLY', 'NICEA', 'NICHE', 'NIECE', 'NIGHT', 'NINJA', 'NINNY', 'NINTH', 'NOBLE', 
+  'NOBLY', 'NOISE', 'NOISY', 'NOMAD', 'NOOSE', 'NORTH', 'NOSEY', 'NOTCH', 'NOVEL', 'NUDGE', 
+  'NURSE', 'NUTTY', 'NYLON', 'NYMPH', 'OAKEN', 'OBESE', 'OCCUR', 'OCEAN', 'OCTAL', 'OCTET', 
+  'ODDER', 'ODDLY', 'OFFAL', 'OFFER', 'OFTEN', 'OLDEN', 'OLDER', 'OLIVE', 'OMBRE', 'OMEGA', 
+  'ONION', 'ONSET', 'OPERA', 'OPINE', 'OPIUM', 'OPTIC', 'ORBIT', 'ORDER', 'ORGAN', 'OTHER', 
+  'OTTER', 'OUGHT', 'OUNCE', 'OUTDO', 'OUTER', 'OUTGO', 'OVARY', 'OVATE', 'OVERT', 'OVINE', 
+  'OVOID', 'OWING', 'OWNER', 'OXIDE', 'OZONE', 'PADDY', 'PAGAN', 'PAINT', 'PALER', 'PALSY', 
+  'PANEL', 'PANIC', 'PANSY', 'PAPAL', 'PAPER', 'PARER', 'PARKA', 'PARRY', 'PARSE', 'PARTY', 
+  'PASTA', 'PASTE', 'PASTY'
 ];
-
-/**
- * Filtered word list for gameplay, excluding obscene terms.
- */
-// Fix: Added the missing export for WORD_LIST to satisfy the import in utils.ts.
-export const WORD_LIST = RAW_WORD_LIST.filter(word => !OBSCENE_WORDS.includes(word.toUpperCase()));

@@ -1,12 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HurdlePlus | The Ultimate Daily Word Challenge</title>
-    <meta name="description" content="Experience the refined daily word puzzle. HurdlePlus combines competitive timing with elegant design.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>HurdlePlus | Daily Word Optimization</title>
+    <meta name="description" content="Experience the refined daily word puzzle. HurdlePlus combines competitive timing with elegant Hyatt Place inspired design.">
     
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -19,24 +23,32 @@
                         'hyatt-navy-dark': '#001D4A',
                         'hyatt-green': '#007A33',
                         'hyatt-orange': '#F47920',
+                        'hyatt-bg': '#F8F9FA',
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     animation: {
-                        'shake': 'shake 0.3s ease-in-out',
-                        'flip': 'flip 0.6s ease-in-out',
+                        'shake': 'shake 0.4s cubic-bezier(.36,.07,.19,.97) both',
+                        'flip': 'flip 0.5s ease-in-out',
+                        'pop': 'pop 0.1s ease-in-out',
                     },
                     keyframes: {
                         shake: {
-                            '0%, 100%': { transform: 'translateX(0)' },
-                            '20%, 60%': { transform: 'translateX(-5px)' },
-                            '40%, 80%': { transform: 'translateX(5px)' },
+                            '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                            '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                            '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                            '40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
                         },
                         flip: {
                             '0%': { transform: 'rotateX(0)' },
                             '50%': { transform: 'rotateX(90deg)' },
                             '100%': { transform: 'rotateX(0)' },
+                        },
+                        pop: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0.5' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
                         }
                     }
                 }
@@ -44,24 +56,32 @@
         }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style type="text/tailwindcss">
         @layer base {
             body {
-                @apply bg-[#F8F9FA] text-slate-900 antialiased;
+                @apply bg-hyatt-bg text-slate-900 antialiased overflow-x-hidden;
                 font-family: 'Montserrat', sans-serif;
             }
+        }
+        @layer components {
+            .tile-correct { @apply bg-hyatt-green border-hyatt-green text-white; }
+            .tile-present { @apply bg-hyatt-orange border-hyatt-orange text-white; }
+            .tile-absent { @apply bg-slate-400 border-slate-400 text-white; }
+            .tile-empty { @apply bg-white border-slate-300; }
+            .tile-active { @apply border-hyatt-navy scale-105 shadow-sm; }
         }
     </style>
 
 <script type="importmap">
 {
   "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.475.0",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.3"
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
