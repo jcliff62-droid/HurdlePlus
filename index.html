@@ -6,36 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HurdlePlus | The Ultimate Daily Word Challenge</title>
     <meta name="description" content="Experience the refined daily word puzzle. HurdlePlus combines competitive timing with elegant design.">
+    
+    <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hyatt-navy': '#002D72',
+                        'hyatt-navy-dark': '#001D4A',
+                        'hyatt-green': '#007A33',
+                        'hyatt-orange': '#F47920',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'shake': 'shake 0.3s ease-in-out',
+                        'flip': 'flip 0.6s ease-in-out',
+                    },
+                    keyframes: {
+                        shake: {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '20%, 60%': { transform: 'translateX(-5px)' },
+                            '40%, 80%': { transform: 'translateX(5px)' },
+                        },
+                        flip: {
+                            '0%': { transform: 'rotateX(0)' },
+                            '50%': { transform: 'rotateX(90deg)' },
+                            '100%': { transform: 'rotateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F8F9FA;
-            scroll-behavior: smooth;
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#F8F9FA] text-slate-900 antialiased;
+                font-family: 'Montserrat', sans-serif;
+            }
         }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-5px); }
-            40%, 80% { transform: translateX(5px); }
-        }
-        .animate-shake {
-            animation: shake 0.3s ease-in-out;
-        }
-        @keyframes flip {
-            0% { transform: rotateX(0); }
-            50% { transform: rotateX(90deg); }
-            100% { transform: rotateX(0); }
-        }
-        .animate-flip {
-            animation: flip 0.6s ease-in-out;
-        }
-        .bg-hyatt-navy { background-color: #002D72; }
-        .text-hyatt-navy { color: #002D72; }
-        .border-hyatt-navy { border-color: #002D72; }
     </style>
+
 <script type="importmap">
 {
   "imports": {
